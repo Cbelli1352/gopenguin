@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title> Log in </title>
+		<script>
+			function buttonClick() {
+				let username = document.getElementById("Username").value
+				let password = document.getElementById("Password").value
+				console.log("Making request")
+				request = new XMLHttpRequest();
+				request.open("POST", "/account/login")
+
+				request.onreadystatechange = function() {
+					console.log(request.responseText)
+				}
+
+				request.send(JSON.stringify({ password: password, username: username}))
+			}
+			window.onload = function() {
+				let submit = document.getElementById("Submit")
+				console.log("Initialized")
+				submit.onclick=buttonClick
+			}
+		</script>	
+	<head>
+	<body>
+		<h1> Log in </h1>
+		<input id="Username">
+		<input id="Password">
+		<button id="Submit"> Submit </button>
+	</body>
+</html>

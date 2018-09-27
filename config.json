@@ -1,0 +1,8 @@
+{
+	"Database": {
+		"Source": "./data.db"
+	},
+	"Auth": {
+		"SecretSource": ""
+	}
+}
